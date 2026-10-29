@@ -16,6 +16,7 @@
   /* Theme tokens (light default) */
   --page-bg: #ffffff;
   --surface: #ffffff;
+  --surface-rgb: 255, 255, 255;
   --surface-soft: #f6f8f9;
   --soft-rgb: 246, 248, 249;
   --heading: #26404a;
@@ -32,6 +33,7 @@
 html[data-theme="dark"] {
   --page-bg: #121e23;
   --surface: #1c2b32;
+  --surface-rgb: 28, 43, 50;
   --surface-soft: #17252b;
   --soft-rgb: 23, 37, 43;
   --heading: #eef4f5;
@@ -335,7 +337,7 @@ html[data-theme="dark"] .theme-toggle .icon-moon { opacity: 1; transform: rotate
 .about .container { position: relative; z-index: 1; }
 .mv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 34px; margin-bottom: 90px; }
 .mv-card {
-  background: var(--surface); border-radius: var(--radius); padding: 44px;
+  background: rgba(var(--surface-rgb), 0.3); border-radius: var(--radius); padding: 44px;
   box-shadow: var(--shadow-md); border: 1px solid rgba(var(--border-rgb),0.06);
   transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease, border-color 0.35s ease; margin: 12px;
 }
@@ -354,7 +356,7 @@ html[data-theme="dark"] .theme-toggle .icon-moon { opacity: 1; transform: rotate
 .values-title { text-align: center; font-size: 1.6rem; margin-bottom: 36px; }
 .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .value-card {
-  background: var(--surface); padding: 30px 26px; border-radius: 16px;
+  background: rgba(var(--surface-rgb), 0.3); padding: 30px 26px; border-radius: 16px;
   border: 1px solid rgba(var(--border-rgb),0.08); position: relative; overflow: hidden;
   transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.35s ease;
 }
@@ -397,7 +399,7 @@ html[data-theme="dark"] .theme-toggle .icon-moon { opacity: 1; transform: rotate
   display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
   position: relative; padding: 50px; border-radius: 28px;
 }
-.service-row:nth-of-type(even) { background: linear-gradient(180deg, var(--surface-soft), var(--page-bg)); }
+.service-row:nth-of-type(even) { background: transparent; }
 .service-row.reverse .service-media { order: 2; }
 .service-ghost {
   position: absolute; top: -10px; right: 30px; font-family: var(--ff-mono); font-weight: 700;
@@ -502,7 +504,7 @@ html[data-theme="dark"] .theme-toggle .icon-moon { opacity: 1; transform: rotate
 .social-btn.whatsapp:hover { background: #25D366; }
 
 .contact-form {
-  background: var(--surface-soft); border-radius: var(--radius); padding: 44px;
+  background: rgba(var(--surface-rgb), 0.3); border-radius: var(--radius); padding: 44px;
   display: flex; flex-direction: column; gap: 18px; box-shadow: var(--shadow-md); margin: 12px;
 }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
