@@ -27,7 +27,7 @@
   --aurora-1: 244, 97, 30;
   --aurora-2: 232, 53, 42;
   --aurora-3: 38, 100, 130;
-  --aurora-a: 0.30;
+  --aurora-a: 0.10;
   --shadow-md: 0 12px 30px -12px rgba(38, 64, 74, 0.25);
   --shadow-lg: 0 25px 60px -20px rgba(20, 35, 41, 0.35);
 }
@@ -46,7 +46,7 @@ html[data-theme="dark"] {
   --aurora-1: 244, 97, 30;
   --aurora-2: 90, 150, 190;
   --aurora-3: 232, 53, 42;
-  --aurora-a: 0.32;
+  --aurora-a: 0.16;
   --shadow-md: 0 12px 30px -12px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 25px 60px -20px rgba(0, 0, 0, 0.6);
 }
