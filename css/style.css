@@ -73,12 +73,12 @@ body {
 .bg-video {
   position: fixed; inset: 0; z-index: -1; pointer-events: none;
   width: 100%; height: 100%; object-fit: cover;
-  opacity: 0.55; mix-blend-mode: multiply;
+  opacity: 0.3; mix-blend-mode: multiply;
   transition: opacity 0.35s ease;
 }
 html[data-theme="dark"] .bg-video {
   filter: invert(1) hue-rotate(180deg);
-  mix-blend-mode: screen; opacity: 0.35;
+  mix-blend-mode: screen; opacity: 0.2;
 }
 @media (prefers-reduced-motion: reduce) { .bg-video { display: none; } }
 
@@ -300,8 +300,8 @@ html[data-theme="dark"] .theme-toggle .icon-moon { opacity: 1; transform: rotate
 /* Section dividers (angled) */
 .divider { display: block; line-height: 0; margin: -1px 0; position: relative; z-index: 1; }
 .divider svg { width: 100%; height: 64px; display: block; }
-.divider-light path { fill: var(--light); }
-.divider-white path { fill: var(--white); }
+.divider-light path { fill: transparent; }
+.divider-white path { fill: transparent; }
 .divider-dark path { fill: var(--dark); }
 
 /* Sections */
