@@ -19,8 +19,8 @@
   --surface-soft: #f6f8f9;
   --soft-rgb: 246, 248, 249;
   --heading: #26404a;
-  --text: #2a3a41;
-  --text-soft: #5b6b73;
+  --text: #1a2a31;
+  --text-soft: #3a4a52;
   --border-rgb: 38, 64, 74;
   --header-scrolled-bg: rgba(255, 255, 255, 0.95);
   --ghost-alpha: 0.06;
@@ -35,8 +35,8 @@ html[data-theme="dark"] {
   --surface-soft: #17252b;
   --soft-rgb: 23, 37, 43;
   --heading: #eef4f5;
-  --text: #cfdde2;
-  --text-soft: #92a7ae;
+  --text: #e6f0f3;
+  --text-soft: #b8cad0;
   --border-rgb: 255, 255, 255;
   --header-scrolled-bg: rgba(18, 30, 35, 0.92);
   --ghost-alpha: 0.14;
