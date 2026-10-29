@@ -24,6 +24,10 @@
   --header-scrolled-bg: rgba(255, 255, 255, 0.95);
   --ghost-alpha: 0.06;
   --num-alpha: 0.18;
+  --aurora-1: 244, 97, 30;
+  --aurora-2: 232, 53, 42;
+  --aurora-3: 38, 100, 130;
+  --aurora-a: 0.10;
   --shadow-md: 0 12px 30px -12px rgba(38, 64, 74, 0.25);
   --shadow-lg: 0 25px 60px -20px rgba(20, 35, 41, 0.35);
 }
@@ -39,6 +43,10 @@ html[data-theme="dark"] {
   --header-scrolled-bg: rgba(18, 30, 35, 0.92);
   --ghost-alpha: 0.14;
   --num-alpha: 0.32;
+  --aurora-1: 244, 97, 30;
+  --aurora-2: 90, 150, 190;
+  --aurora-3: 232, 53, 42;
+  --aurora-a: 0.16;
   --shadow-md: 0 12px 30px -12px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 25px 60px -20px rgba(0, 0, 0, 0.6);
 }
@@ -67,13 +75,36 @@ body {
   position: relative;
 }
 
-/* Site-wide subtle grain/grid texture, sits above every section's own background */
-body::before {
+/* Site-wide animated aurora: soft colour clouds drifting slowly, themed for light/dark */
+body::before,
+body::after {
   content: '';
-  position: fixed; inset: 0; z-index: 3; pointer-events: none;
-  background-image: radial-gradient(rgba(var(--border-rgb), 0.4) 1px, transparent 1.6px);
-  background-size: 28px 28px;
-  opacity: 0.45;
+  position: fixed; z-index: 3; pointer-events: none;
+  width: 140vmax; height: 140vmax;
+  top: 50%; left: 50%;
+  margin: -70vmax 0 0 -70vmax;
+  will-change: transform;
+}
+body::before {
+  background:
+    radial-gradient(circle at 22% 30%, rgba(var(--aurora-1), var(--aurora-a)) 0, transparent 22%),
+    radial-gradient(circle at 78% 24%, rgba(var(--aurora-2), var(--aurora-a)) 0, transparent 20%),
+    radial-gradient(circle at 60% 78%, rgba(var(--aurora-3), var(--aurora-a)) 0, transparent 24%);
+  animation: auroraSpin 60s linear infinite;
+}
+body::after {
+  background:
+    radial-gradient(circle at 70% 60%, rgba(var(--aurora-2), var(--aurora-a)) 0, transparent 20%),
+    radial-gradient(circle at 30% 72%, rgba(var(--aurora-1), var(--aurora-a)) 0, transparent 22%);
+  animation: auroraSpin 90s linear infinite reverse;
+}
+@keyframes auroraSpin {
+  from { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(1.15); }
+  to   { transform: rotate(360deg) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  body::before, body::after { animation: none; }
 }
 
 img { max-width: 100%; display: block; }
